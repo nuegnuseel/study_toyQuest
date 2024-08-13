@@ -9,7 +9,12 @@ public class SharedDao {
     @Autowired
     private SqlSessionTemplate sqlSessionTemplate;
 
-    // 여러 개 레코드 
+    public Object getJoinList(String sqlMapId) {
+        Object rs = sqlSessionTemplate.selectList(sqlMapId);
+        return rs;
+    }
+
+    // 여러 개 레코드
     public Object getList(String sqlMapId, Object dataMap){
         Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
         return result;
@@ -26,8 +31,8 @@ public class SharedDao {
         Object result = sqlSessionTemplate.update(sqlMapId, dataMap);
         return result;
     }
-    
-    // 만듦
+
+    // 만듬
     public Object insert(String sqlMapId, Object dataMap){
         Object result = sqlSessionTemplate.insert(sqlMapId, dataMap);
         return result;
@@ -37,5 +42,5 @@ public class SharedDao {
     public Object delete(String sqlMapId, Object dataMap){
         Object result = sqlSessionTemplate.delete(sqlMapId, dataMap);
         return result;
-    }    
+    }
 }

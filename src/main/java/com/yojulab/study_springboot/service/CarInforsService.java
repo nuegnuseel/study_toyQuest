@@ -177,4 +177,24 @@ public class CarInforsService {
         return result;
     }
 
+    public Object getCarCompanyList() {
+        String sqlMapId = "CarInfors.joinSelect";
+
+        Object dataMap = null;
+        Object result = sharedDao.getList(sqlMapId, dataMap); // dataMap을 params로 수정
+        return result;
+    }
+
+    public Object selectSearchJoin() {
+        // Object getOne(String sqlMapId, Object dataMap)
+        String sqlMapId = "requestMapper.selectSearchJoin1";
+        Object result = sharedDao.getJoinList(sqlMapId);
+        return result;
+    }
+
+    public Object selectSearchJoin2() {
+        String sqlMapId = "requestMapper.selectSearchJoin2";
+        Object result = sharedDao.getJoinList(sqlMapId);
+        return result;
+    }
 }

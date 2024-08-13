@@ -15,7 +15,7 @@
             <when test="search == 'CAR_NAME'">
             and CAR_NAME like CONCAT(#{words}, '%')
             </when>
-        </choose>        
+        </choose>
         ;
 	</select>
 
